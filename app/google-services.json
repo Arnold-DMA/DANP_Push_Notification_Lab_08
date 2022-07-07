@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "449834710746",
+    "project_id": "danp-push-notification",
+    "storage_bucket": "danp-push-notification.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449834710746:android:c60186f0bd882afd7197e3",
+        "android_client_info": {
+          "package_name": "com.danp.danp_push_notification_lab_08"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "449834710746-e7p1ubn5pahre3opq749vukur61o9jl9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCr0Yd_EWI69LmKv1ygGr6OLOpuJJ-XV_s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "449834710746-e7p1ubn5pahre3opq749vukur61o9jl9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
