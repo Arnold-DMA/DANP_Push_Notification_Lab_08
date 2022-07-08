@@ -17,7 +17,6 @@ import com.moengage.pushbase.ACTION_SNOOZE
 
 class MyFirebaseMessagingService: FirebaseMessagingService() {
 
-    private val KEY_TEXT_REPLY = "key_text_reply"
 
     companion object {
         private const val TAG = "Notificación FCM"
@@ -92,8 +91,8 @@ class MyFirebaseMessagingService: FirebaseMessagingService() {
             .setSmallIcon(R.drawable.ic_books)
             .setContentTitle(title)
             .setContentText(body)
-            //.setStyle(NotificationCompat.BigTextStyle()
-            //    .bigText(body))
+            .setStyle(NotificationCompat.BigTextStyle()
+                .bigText(body))
             .setContentIntent(pendingIntent)
             .addAction(action1)
             .addAction(action2)
