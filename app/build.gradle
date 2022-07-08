@@ -72,4 +72,5 @@ dependencies {
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'com.google.firebase:firebase-messaging-ktx'
 
+    implementation("com.moengage:pushbase:6.1.2")
 }

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DANP_Push_Notification_Lab_08</string>
+    <string name="reply_label">Respuesta</string>
+    <string name="notifyButton">Revisar Estadística</string>
 </resources>
