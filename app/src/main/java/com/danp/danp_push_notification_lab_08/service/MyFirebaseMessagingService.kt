@@ -7,15 +7,33 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import com.danp.danp_push_notification_lab_08.MainActivity
 import com.danp.danp_push_notification_lab_08.R
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.messaging.ktx.messaging
 import com.moengage.pushbase.ACTION_SNOOZE
 
+
 class MyFirebaseMessagingService: FirebaseMessagingService() {
+
+    fun subscribeTopics() {
+        // [START subscribe_topics]
+        Firebase.messaging.subscribeToTopic("weather")
+            .addOnCompleteListener { task ->
+                var msg = "Subscribed"
+                if (!task.isSuccessful) {
+                    msg = "Subscribe failed"
+                }
+                Log.d(TAG, msg)
+                Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
+            }
+        // [END subscribe_topics]
+    }
 
 
     companion object {
@@ -23,6 +41,7 @@ class MyFirebaseMessagingService: FirebaseMessagingService() {
         const val DEFAULT_NOTIFICATION_ID = 0
         const val INTENT_REQUEST = 0
         const val BUTTON_INTENT_REQUEST = 1
+
     }
 
 

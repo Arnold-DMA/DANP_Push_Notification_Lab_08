@@ -27,16 +27,32 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.danp.danp_push_notification_lab_08.service.MyFirebaseMessagingService
 import com.danp.danp_push_notification_lab_08.ui.theme.DANP_Push_Notification_Lab_08Theme
 import com.danp.danp_push_notification_lab_08.ui.theme.Purple500
 import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.ktx.Firebase
 import com.google.firebase.messaging.FirebaseMessaging
-
+import com.google.firebase.messaging.ktx.messaging
 
 
 class MainActivity : ComponentActivity() {
+    fun subscribeTopics() {
+        // [START subscribe_topics]
+        Firebase.messaging.subscribeToTopic("todos")
+            .addOnCompleteListener { task ->
+                var msg = "Suscrito"
+                if (!task.isSuccessful) {
+                    msg = "Fallido"
+                }
+                Log.d("Estado", msg)
+                Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
+            }
+        // [END subscribe_topics]
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        subscribeTopics()
         setContent {
             DANP_Push_Notification_Lab_08Theme {
                 // A surface container using the 'background' color from the theme
